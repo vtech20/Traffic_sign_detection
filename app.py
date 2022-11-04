@@ -47,7 +47,7 @@ def predict():
     results.render()
     
     # encoding the resulting image and return it
-    for img in results.imgs:
+    for img in results.ims:
         RGB_img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         im_arr = cv2.imencode('.jpg', RGB_img)[1]
         response = make_response(im_arr.tobytes())
